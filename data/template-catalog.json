@@ -1,0 +1,122 @@
+[
+  {
+    "id": "editorial-trust-stack",
+    "name": "Editorial Trust Stack",
+    "fit": {
+      "industries": ["roofing", "hvac", "plumbing", "legal", "home services"],
+      "siteTypes": ["contractor lead generation", "service business", "local services"]
+    },
+    "tone": ["premium", "calm", "confident", "clean"],
+    "strengths": [
+      "trust building",
+      "high-clarity hierarchy",
+      "premium positioning",
+      "strong desktop-to-mobile translation"
+    ],
+    "sections": [
+      "hero",
+      "social proof",
+      "services",
+      "process",
+      "testimonials",
+      "faq",
+      "contact"
+    ],
+    "visualPattern": {
+      "layout": "asymmetric editorial grid with oversized headline block",
+      "background": "warm neutral surfaces with dark anchoring sections",
+      "cards": "thin bordered cards with large number markers",
+      "motion": "subtle staggered reveals and restrained hover lift"
+    }
+  },
+  {
+    "id": "bold-conversion-bands",
+    "name": "Bold Conversion Bands",
+    "fit": {
+      "industries": ["concrete", "roofing", "solar", "fitness", "automotive"],
+      "siteTypes": ["contractor lead generation", "landing page", "single offer"]
+    },
+    "tone": ["bold", "urgent", "direct", "high-energy"],
+    "strengths": [
+      "phone calls",
+      "single-offer conversion",
+      "strong CTA repetition",
+      "visual immediacy"
+    ],
+    "sections": [
+      "hero",
+      "benefits",
+      "services",
+      "before and after",
+      "testimonials",
+      "contact"
+    ],
+    "visualPattern": {
+      "layout": "stacked horizontal bands with alternating media and CTA blocks",
+      "background": "high-contrast color blocking",
+      "cards": "solid cards with strong iconography",
+      "motion": "quick slide-ins and punchy button feedback"
+    }
+  },
+  {
+    "id": "quiet-saas-proof",
+    "name": "Quiet SaaS Proof",
+    "fit": {
+      "industries": ["saas", "b2b", "ai", "developer tools"],
+      "siteTypes": ["product marketing", "software landing page", "waitlist"]
+    },
+    "tone": ["minimal", "smart", "technical", "calm"],
+    "strengths": [
+      "feature explanation",
+      "credibility",
+      "comparison sections",
+      "pricing presentation"
+    ],
+    "sections": [
+      "hero",
+      "logos",
+      "features",
+      "comparison",
+      "pricing",
+      "faq",
+      "cta"
+    ],
+    "visualPattern": {
+      "layout": "centered product-marketing narrative with modular feature rows",
+      "background": "soft gradients and crisp panels",
+      "cards": "subtle glass panels and code-window motifs",
+      "motion": "gentle fades and tab transitions"
+    }
+  },
+  {
+    "id": "premium-local-authority",
+    "name": "Premium Local Authority",
+    "fit": {
+      "industries": ["roofing", "plumbing", "electrical", "hvac", "remodeling"],
+      "siteTypes": ["contractor lead generation", "multi-service local business"]
+    },
+    "tone": ["premium", "authoritative", "trustworthy", "grounded"],
+    "strengths": [
+      "local credibility",
+      "estimate requests",
+      "service-area messaging",
+      "review-heavy trust architecture"
+    ],
+    "sections": [
+      "hero",
+      "reviews",
+      "service areas",
+      "services",
+      "process",
+      "financing",
+      "faq",
+      "contact"
+    ],
+    "visualPattern": {
+      "layout": "structured lead-gen page with layered trust strips and map-ready sections",
+      "background": "light stone surfaces with strong accent bars",
+      "cards": "elevated testimonial and service cards with badge chips",
+      "motion": "measured count-ups and in-view card reveals"
+    }
+  }
+]

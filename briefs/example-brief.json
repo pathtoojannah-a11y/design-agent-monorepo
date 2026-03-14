@@ -1,0 +1,36 @@
+{
+  "projectName": "Northline Roofing",
+  "industry": "roofing",
+  "siteType": "contractor lead generation",
+  "targetAudience": "homeowners who need roof repair or replacement",
+  "goals": [
+    "phone calls",
+    "form submissions",
+    "trust building"
+  ],
+  "tone": [
+    "premium",
+    "confident",
+    "clean"
+  ],
+  "requiredSections": [
+    "hero",
+    "social proof",
+    "services",
+    "process",
+    "testimonials",
+    "faq",
+    "contact"
+  ],
+  "brand": {
+    "primary": "#0F4C5C",
+    "secondary": "#E36414",
+    "accent": "#FBF5EF",
+    "surface": "#FFFDF9",
+    "text": "#14213D",
+    "fontDisplay": "Fraunces",
+    "fontBody": "Manrope",
+    "radius": "20px",
+    "motion": "measured"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "rara-template-scout",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "select-template": "node ./src/run-template-selector.mjs ./briefs/example-brief.json"
+  }
+}
