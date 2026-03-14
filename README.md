@@ -1,51 +1,55 @@
-# Template Scout Starter
+# Design Agent Monorepo
 
-This repo gives you a simple agent-friendly workflow for picking the best landing-page direction from a catalog of template patterns, then adapting that pattern into your own brand system.
+Public, reusable monorepo for section-based design intelligence and agent-driven website planning.
 
-## What it does
+This repo ships two things:
 
-- Reads a project brief from `briefs/example-brief.json`
-- Scores each entry in `data/template-catalog.json`
-- Selects the best-fit pattern
-- Produces a brand adaptation plan and prompt seed for later implementation
+- reusable Codex and Claude agent definitions for design-reference workflows
+- a lightweight engine that evaluates curated reference metadata and produces compact build specs
 
-## Run it
+The system is built to learn from strong reference patterns without mirroring third-party source code or assets.
+
+## Repo shape
+
+- `agents/`: Codex and Claude agent definitions
+- `catalog/`: metadata-only design references
+- `engine/`: contracts, scoring logic, composition, CLI, and tests
+- `examples/`: sample briefs and example outputs
+- `docs/`: workflow and extension docs
+
+## Quick start
 
 ```bash
-npm run select-template
+npm run example:contractor
 ```
-
-Or run a different brief directly:
 
 ```bash
-node ./src/run-template-selector.mjs ./briefs/example-brief.json
+npm run example:saas
 ```
 
-## Files
+```bash
+npm test
+```
 
-- `briefs/example-brief.json`: your business brief, goals, brand colors, fonts, and required sections
-- `data/template-catalog.json`: reusable template patterns inspired by strong modern landing-page structures
-- `src/run-template-selector.mjs`: scoring and adaptation logic
+## Output model
 
-## How to use this with agents
+The default engine output is a compact JSON build spec containing:
 
-Use the generated `promptSeed` as the handoff prompt to your build agent.
+- selected sections
+- section rationale
+- visual direction
+- brand adaptation
+- copy direction
+- implementation prompt
+- non-cloning constraints
 
-Suggested flow:
+## Compliance model
 
-1. A scout agent gathers strong reference pages or 21st-style components.
-2. This repo scores the best structural fit against the client brief.
-3. A design agent rewrites colors, typography, spacing, and motion.
-4. A build agent turns the chosen direction into code.
+This repo stores metadata only:
 
-## How to connect this to 21st later
+- source URLs
+- screenshot paths or image references
+- section tags and style notes
+- business-fit metadata
 
-Right now the catalog is local and manual. That is deliberate so the workflow works immediately.
-
-Later, you can replace or enrich `data/template-catalog.json` with:
-
-- 21st Magic outputs
-- manually curated 21st component/page references
-- your own internal winning templates
-
-The key rule is simple: reuse structure, not exact branding.
+It does not store mirrored template code or proprietary assets.

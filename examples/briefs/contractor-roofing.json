@@ -3,16 +3,8 @@
   "industry": "roofing",
   "siteType": "contractor lead generation",
   "targetAudience": "homeowners who need roof repair or replacement",
-  "goals": [
-    "phone calls",
-    "form submissions",
-    "trust building"
-  ],
-  "tone": [
-    "premium",
-    "confident",
-    "clean"
-  ],
+  "goals": ["phone calls", "form submissions", "trust building"],
+  "tone": ["premium", "confident", "clean"],
   "requiredSections": [
     "hero",
     "social proof",

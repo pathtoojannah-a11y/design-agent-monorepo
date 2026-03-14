@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReferenceMetadata",
+  "type": "object",
+  "required": ["id", "sourceUrl", "sourceName", "sectionType", "industries", "siteTypes", "tone", "strengths", "visualTraits", "notes", "screenshot"],
+  "properties": {
+    "id": { "type": "string" },
+    "sourceUrl": { "type": "string" },
+    "sourceName": { "type": "string" },
+    "sectionType": { "type": "string" },
+    "industries": { "type": "array", "items": { "type": "string" } },
+    "siteTypes": { "type": "array", "items": { "type": "string" } },
+    "tone": { "type": "array", "items": { "type": "string" } },
+    "strengths": { "type": "array", "items": { "type": "string" } },
+    "visualTraits": {
+      "type": "object",
+      "required": ["layout", "background", "cardStyle", "motionStyle"],
+      "properties": {
+        "layout": { "type": "string" },
+        "background": { "type": "string" },
+        "cardStyle": { "type": "string" },
+        "motionStyle": { "type": "string" }
+      }
+    },
+    "notes": { "type": "string" },
+    "screenshot": { "type": "string" }
+  }
+}

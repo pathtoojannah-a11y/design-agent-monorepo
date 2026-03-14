@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BusinessBrief",
+  "type": "object",
+  "required": ["projectName", "industry", "siteType", "targetAudience", "goals", "tone", "requiredSections", "brand"],
+  "properties": {
+    "projectName": { "type": "string" },
+    "industry": { "type": "string" },
+    "siteType": { "type": "string" },
+    "targetAudience": { "type": "string" },
+    "goals": { "type": "array", "items": { "type": "string" } },
+    "tone": { "type": "array", "items": { "type": "string" } },
+    "requiredSections": { "type": "array", "items": { "type": "string" } },
+    "brand": {
+      "type": "object",
+      "required": ["primary", "secondary", "accent", "surface", "text", "fontDisplay", "fontBody", "radius", "motion"],
+      "properties": {
+        "primary": { "type": "string" },
+        "secondary": { "type": "string" },
+        "accent": { "type": "string" },
+        "surface": { "type": "string" },
+        "text": { "type": "string" },
+        "fontDisplay": { "type": "string" },
+        "fontBody": { "type": "string" },
+        "radius": { "type": "string" },
+        "motion": { "type": "string" }
+      }
+    }
+  }
+}

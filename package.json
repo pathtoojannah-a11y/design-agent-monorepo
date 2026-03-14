@@ -1,9 +1,12 @@
 {
-  "name": "rara-template-scout",
+  "name": "design-agent-monorepo",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "select-template": "node ./src/run-template-selector.mjs ./briefs/example-brief.json"
+    "build-spec": "node ./engine/src/cli.mjs",
+    "example:contractor": "node ./engine/src/cli.mjs ./examples/briefs/contractor-roofing.json",
+    "example:saas": "node ./engine/src/cli.mjs ./examples/briefs/saas-ai-platform.json",
+    "test": "node ./engine/tests/run-tests.mjs"
   }
 }

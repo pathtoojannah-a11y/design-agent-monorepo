@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GeneratedBuildSpec",
+  "type": "object",
+  "required": ["project", "selectedSections", "sectionRationale", "globalVisualDirection", "brandAdaptation", "copyDirection", "implementationPrompt", "constraints"],
+  "properties": {
+    "project": { "type": "object" },
+    "selectedSections": { "type": "array", "items": { "type": "object" } },
+    "sectionRationale": { "type": "array", "items": { "type": "string" } },
+    "globalVisualDirection": { "type": "object" },
+    "brandAdaptation": { "type": "object" },
+    "copyDirection": { "type": "object" },
+    "implementationPrompt": { "type": "string" },
+    "constraints": { "type": "array", "items": { "type": "string" } }
+  }
+}

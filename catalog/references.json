@@ -1,0 +1,218 @@
+[
+  {
+    "id": "ref-roofing-hero-editorial",
+    "sourceUrl": "https://example.com/references/roofing-editorial-hero",
+    "sourceName": "Editorial Roofing Hero",
+    "sectionType": "hero",
+    "industries": ["roofing", "plumbing", "hvac", "electrical"],
+    "siteTypes": ["contractor lead generation", "local services"],
+    "tone": ["premium", "confident", "clean"],
+    "strengths": ["trust building", "phone calls", "form submissions"],
+    "visualTraits": {
+      "layout": "asymmetric editorial grid",
+      "background": "warm neutral field with dark panel",
+      "cardStyle": "thin bordered stat cards",
+      "motionStyle": "measured staggered reveals"
+    },
+    "notes": "Strong first-screen authority and a clear estimate CTA without feeling generic.",
+    "screenshot": "./images/ref-roofing-hero-editorial.png"
+  },
+  {
+    "id": "ref-roofing-proof-badges",
+    "sourceUrl": "https://example.com/references/roofing-proof-badges",
+    "sourceName": "Roofing Proof Strip",
+    "sectionType": "social proof",
+    "industries": ["roofing", "remodeling", "home services"],
+    "siteTypes": ["contractor lead generation", "local services"],
+    "tone": ["premium", "grounded", "clean"],
+    "strengths": ["trust building", "local credibility", "review-heavy trust architecture"],
+    "visualTraits": {
+      "layout": "horizontal proof strip with review callouts",
+      "background": "light stone surface",
+      "cardStyle": "badge chips and review snippets",
+      "motionStyle": "static first impression with subtle fade"
+    },
+    "notes": "Useful directly below the hero to establish proof early.",
+    "screenshot": "./images/ref-roofing-proof-badges.png"
+  },
+  {
+    "id": "ref-roofing-services-grid",
+    "sourceUrl": "https://example.com/references/roofing-services-grid",
+    "sourceName": "Roofing Services Grid",
+    "sectionType": "services",
+    "industries": ["roofing", "hvac", "plumbing"],
+    "siteTypes": ["contractor lead generation", "multi-service local business"],
+    "tone": ["premium", "clean", "authoritative"],
+    "strengths": ["service clarity", "estimate requests", "trust building"],
+    "visualTraits": {
+      "layout": "three-column card grid with priority service card",
+      "background": "warm neutral with accented top border",
+      "cardStyle": "elevated cards with icon badge",
+      "motionStyle": "soft hover lift"
+    },
+    "notes": "Works when services need hierarchy rather than a flat icon row.",
+    "screenshot": "./images/ref-roofing-services-grid.png"
+  },
+  {
+    "id": "ref-roofing-process-steps",
+    "sourceUrl": "https://example.com/references/roofing-process-steps",
+    "sourceName": "Roofing Process Steps",
+    "sectionType": "process",
+    "industries": ["roofing", "concrete", "electrical", "plumbing"],
+    "siteTypes": ["contractor lead generation", "local services"],
+    "tone": ["confident", "clean", "grounded"],
+    "strengths": ["trust building", "process clarity", "form submissions"],
+    "visualTraits": {
+      "layout": "numbered timeline with alternating text blocks",
+      "background": "light surface with accent markers",
+      "cardStyle": "large numerals with short explanations",
+      "motionStyle": "sequential in-view reveal"
+    },
+    "notes": "Reduces hesitation around the estimate and project timeline.",
+    "screenshot": "./images/ref-roofing-process-steps.png"
+  },
+  {
+    "id": "ref-roofing-testimonials-stack",
+    "sourceUrl": "https://example.com/references/roofing-testimonials-stack",
+    "sourceName": "Roofing Testimonials Stack",
+    "sectionType": "testimonials",
+    "industries": ["roofing", "plumbing", "electrical", "remodeling"],
+    "siteTypes": ["contractor lead generation", "local services"],
+    "tone": ["premium", "trustworthy", "grounded"],
+    "strengths": ["trust building", "review-heavy trust architecture", "local credibility"],
+    "visualTraits": {
+      "layout": "stacked review cards with a featured customer story",
+      "background": "dark field with light cards",
+      "cardStyle": "review cards with star metadata",
+      "motionStyle": "measured card rise"
+    },
+    "notes": "Makes testimonials feel premium rather than commodity content.",
+    "screenshot": "./images/ref-roofing-testimonials-stack.png"
+  },
+  {
+    "id": "ref-roofing-faq-split",
+    "sourceUrl": "https://example.com/references/roofing-faq-split",
+    "sourceName": "Roofing FAQ Split",
+    "sectionType": "faq",
+    "industries": ["roofing", "hvac", "plumbing"],
+    "siteTypes": ["contractor lead generation", "local services"],
+    "tone": ["clean", "confident", "calm"],
+    "strengths": ["trust building", "objection handling"],
+    "visualTraits": {
+      "layout": "two-column FAQ with sidebar CTA",
+      "background": "soft neutral",
+      "cardStyle": "bordered accordion blocks",
+      "motionStyle": "minimal accordion motion"
+    },
+    "notes": "Pairs FAQs with a final CTA instead of leaving the section passive.",
+    "screenshot": "./images/ref-roofing-faq-split.png"
+  },
+  {
+    "id": "ref-roofing-contact-panel",
+    "sourceUrl": "https://example.com/references/roofing-contact-panel",
+    "sourceName": "Roofing Contact Panel",
+    "sectionType": "contact",
+    "industries": ["roofing", "plumbing", "electrical", "home services"],
+    "siteTypes": ["contractor lead generation", "local services"],
+    "tone": ["premium", "confident", "clean"],
+    "strengths": ["phone calls", "form submissions", "estimate requests"],
+    "visualTraits": {
+      "layout": "split contact panel with phone emphasis and short form",
+      "background": "dark anchor section",
+      "cardStyle": "high-contrast form panel",
+      "motionStyle": "static priority CTA"
+    },
+    "notes": "Designed to maximize estimate starts on desktop and mobile.",
+    "screenshot": "./images/ref-roofing-contact-panel.png"
+  },
+  {
+    "id": "ref-saas-hero-product",
+    "sourceUrl": "https://example.com/references/saas-hero-product",
+    "sourceName": "SaaS Product Hero",
+    "sectionType": "hero",
+    "industries": ["saas", "ai", "developer tools", "b2b"],
+    "siteTypes": ["product marketing", "software landing page"],
+    "tone": ["smart", "technical", "calm"],
+    "strengths": ["product clarity", "waitlist conversion", "credibility"],
+    "visualTraits": {
+      "layout": "centered hero with product pane and support rail",
+      "background": "soft gradient field",
+      "cardStyle": "crisp UI preview panels",
+      "motionStyle": "gentle fade and panel drift"
+    },
+    "notes": "Balances technical depth and commercial clarity.",
+    "screenshot": "./images/ref-saas-hero-product.png"
+  },
+  {
+    "id": "ref-saas-logos-grid",
+    "sourceUrl": "https://example.com/references/saas-logos-grid",
+    "sourceName": "SaaS Logos Grid",
+    "sectionType": "logos",
+    "industries": ["saas", "ai", "b2b"],
+    "siteTypes": ["product marketing", "software landing page"],
+    "tone": ["minimal", "smart", "clean"],
+    "strengths": ["credibility", "social proof"],
+    "visualTraits": {
+      "layout": "two-row logo grid with analyst quote",
+      "background": "flat light panel",
+      "cardStyle": "minimal logo tiles",
+      "motionStyle": "subtle marquee fallback"
+    },
+    "notes": "Adds trust without overpowering core feature messaging.",
+    "screenshot": "./images/ref-saas-logos-grid.png"
+  },
+  {
+    "id": "ref-saas-features-modular",
+    "sourceUrl": "https://example.com/references/saas-features-modular",
+    "sourceName": "SaaS Modular Features",
+    "sectionType": "features",
+    "industries": ["saas", "ai", "developer tools"],
+    "siteTypes": ["product marketing", "software landing page"],
+    "tone": ["smart", "technical", "clean"],
+    "strengths": ["feature explanation", "comparison prep", "credibility"],
+    "visualTraits": {
+      "layout": "modular alternating feature rows",
+      "background": "crisp white with gradient accents",
+      "cardStyle": "glass-light feature panels",
+      "motionStyle": "tab transitions and fades"
+    },
+    "notes": "Strong when product detail matters more than spectacle.",
+    "screenshot": "./images/ref-saas-features-modular.png"
+  },
+  {
+    "id": "ref-saas-pricing-clarity",
+    "sourceUrl": "https://example.com/references/saas-pricing-clarity",
+    "sourceName": "SaaS Pricing Clarity",
+    "sectionType": "pricing",
+    "industries": ["saas", "ai", "b2b"],
+    "siteTypes": ["product marketing", "software landing page"],
+    "tone": ["minimal", "calm", "smart"],
+    "strengths": ["pricing presentation", "conversion", "comparison prep"],
+    "visualTraits": {
+      "layout": "three-tier pricing matrix with value callout",
+      "background": "soft panel grouping",
+      "cardStyle": "clean pricing cards with muted dividers",
+      "motionStyle": "minimal hover emphasis"
+    },
+    "notes": "Useful when the product needs transparent pricing and a clear default plan.",
+    "screenshot": "./images/ref-saas-pricing-clarity.png"
+  },
+  {
+    "id": "ref-saas-faq-cta",
+    "sourceUrl": "https://example.com/references/saas-faq-cta",
+    "sourceName": "SaaS FAQ With CTA",
+    "sectionType": "faq",
+    "industries": ["saas", "ai", "developer tools"],
+    "siteTypes": ["product marketing", "software landing page"],
+    "tone": ["clean", "calm", "technical"],
+    "strengths": ["objection handling", "conversion", "product clarity"],
+    "visualTraits": {
+      "layout": "single-column FAQ with final action rail",
+      "background": "neutral surface",
+      "cardStyle": "minimal accordion cards",
+      "motionStyle": "minimal accordion motion"
+    },
+    "notes": "Handles integration and pricing objections without bloating the page.",
+    "screenshot": "./images/ref-saas-faq-cta.png"
+  }
+]

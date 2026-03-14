@@ -1,0 +1,48 @@
+{
+  "project": {
+    "projectName": "Northline Roofing",
+    "industry": "roofing",
+    "siteType": "contractor lead generation"
+  },
+  "selectedSections": [
+    {
+      "sectionType": "hero",
+      "referenceId": "ref-roofing-hero-editorial",
+      "sourceName": "Editorial Roofing Hero"
+    },
+    {
+      "sectionType": "social proof",
+      "referenceId": "ref-roofing-proof-badges",
+      "sourceName": "Roofing Proof Strip"
+    }
+  ],
+  "sectionRationale": [
+    "The hero establishes authority quickly and supports both phone calls and estimate requests.",
+    "The proof strip validates local credibility immediately after the headline."
+  ],
+  "globalVisualDirection": {
+    "layout": "editorial asymmetry anchored by trust-heavy horizontal sections",
+    "background": "warm neutrals with dark closing conversion band",
+    "cardStyle": "thin borders and elevated review cards",
+    "motionStyle": "measured reveals with restrained hover lift"
+  },
+  "brandAdaptation": {
+    "palette": {
+      "primary": "#0F4C5C",
+      "secondary": "#E36414"
+    },
+    "typography": {
+      "display": "Fraunces",
+      "body": "Manrope"
+    }
+  },
+  "copyDirection": {
+    "headlineStyle": "confident and premium without hype",
+    "ctaStyle": "estimate-first with phone backup",
+    "trustSignals": ["review count", "service area confidence", "process clarity"]
+  },
+  "constraints": [
+    "Do not copy source copy, logos, or proprietary illustrations.",
+    "Reuse structural patterns only, then restyle into the target brand system."
+  ]
+}
