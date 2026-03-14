@@ -8,10 +8,14 @@ Each record should include:
 - `sourceUrl`
 - `sourceName`
 - `sectionType`
+- `categoryGroup`
+- `sourceCategory`
+- `priority`
 - `industries`
 - `siteTypes`
 - `tone`
 - `strengths`
+- `requiresFeatureSignals`
 - `visualTraits`
 - `notes`
 - `screenshot`

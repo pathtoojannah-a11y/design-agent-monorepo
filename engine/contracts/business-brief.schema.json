@@ -11,6 +11,13 @@
     "goals": { "type": "array", "items": { "type": "string" } },
     "tone": { "type": "array", "items": { "type": "string" } },
     "requiredSections": { "type": "array", "items": { "type": "string" } },
+    "featureSignals": { "type": "array", "items": { "type": "string" } },
+    "clarifications": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
     "brand": {
       "type": "object",
       "required": ["primary", "secondary", "accent", "surface", "text", "fontDisplay", "fontBody", "radius", "motion"],

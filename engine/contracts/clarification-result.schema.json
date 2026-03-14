@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ClarificationResult",
+  "type": "object",
+  "required": [
+    "status",
+    "project",
+    "primaryCategories",
+    "optionalCategories",
+    "pendingQuestion",
+    "questionsAsked",
+    "confidenceSummary",
+    "nextStep"
+  ],
+  "properties": {
+    "status": { "const": "needs_clarification" },
+    "project": { "type": "object" },
+    "primaryCategories": { "type": "array", "items": { "type": "string" } },
+    "optionalCategories": { "type": "array", "items": { "type": "string" } },
+    "expandedCategories": { "type": "array", "items": { "type": "string" } },
+    "pendingQuestion": { "type": "object" },
+    "questionsAsked": { "type": "array", "items": { "type": "object" } },
+    "confidenceSummary": { "type": "object" },
+    "nextStep": { "type": "string" }
+  }
+}

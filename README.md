@@ -28,6 +28,10 @@ npm run example:saas
 ```
 
 ```bash
+npm run example:portal
+```
+
+```bash
 npm test
 ```
 
@@ -42,6 +46,18 @@ The default engine output is a compact JSON build spec containing:
 - copy direction
 - implementation prompt
 - non-cloning constraints
+
+When the brief is ambiguous and an extra category could materially change the result, the engine returns a structured `needs_clarification` response instead of guessing.
+
+## Provider modes
+
+The CLI defaults to the local catalog-backed provider.
+
+You can also use the manual runtime stub:
+
+```bash
+node ./engine/src/cli.mjs ./examples/briefs/saas-ai-platform.json --provider=manual-runtime --runtime-file=./examples/runtime/manual-runtime.json
+```
 
 ## Compliance model
 

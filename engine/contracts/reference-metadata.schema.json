@@ -2,12 +2,19 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ReferenceMetadata",
   "type": "object",
-  "required": ["id", "sourceUrl", "sourceName", "sectionType", "industries", "siteTypes", "tone", "strengths", "visualTraits", "notes", "screenshot"],
+  "required": ["id", "sourceUrl", "sourceName", "categoryGroup", "sourceCategory", "sectionType", "industries", "siteTypes", "tone", "strengths", "visualTraits", "notes", "screenshot"],
   "properties": {
     "id": { "type": "string" },
     "sourceUrl": { "type": "string" },
     "sourceName": { "type": "string" },
+    "categoryGroup": { "type": "string" },
+    "sourceCategory": { "type": "string" },
     "sectionType": { "type": "string" },
+    "priority": { "type": "string" },
+    "requiresFeatureSignals": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
     "industries": { "type": "array", "items": { "type": "string" } },
     "siteTypes": { "type": "array", "items": { "type": "string" } },
     "tone": { "type": "array", "items": { "type": "string" } },

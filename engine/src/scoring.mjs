@@ -35,12 +35,26 @@ export function scoreReference(reference, brief) {
     reasons.push(`Goal alignment: ${goalHits.join(", ")}`);
   }
 
+  const requestedSignals = new Set((brief.featureSignals ?? []).map(normalize));
+  const requiredSignals = (reference.requiresFeatureSignals ?? []).map(normalize);
+  if (requiredSignals.length > 0) {
+    const signalHits = requiredSignals.filter((signal) => requestedSignals.has(signal));
+    if (signalHits.length > 0) {
+      score += signalHits.length * 10;
+      reasons.push(`Feature signals: ${signalHits.join(", ")}`);
+    }
+  }
+
   return { score, reasons };
 }
 
-export function chooseSection(referencePool, brief, sectionType) {
+export function chooseSection(referencePool, brief, sectionType, allowedCategories = []) {
+  const allowedSet = new Set(allowedCategories.map(normalize));
   const candidates = referencePool
     .filter((reference) => normalize(reference.sectionType) === normalize(sectionType))
+    .filter((reference) =>
+      allowedSet.size === 0 || allowedSet.has(normalize(reference.sourceCategory))
+    )
     .map((reference) => {
       const { score, reasons } = scoreReference(reference, brief);
       return { reference, score, reasons };

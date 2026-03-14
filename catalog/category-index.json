@@ -1,0 +1,73 @@
+{
+  "groups": [
+    {
+      "name": "Marketing Blocks",
+      "categories": [
+        { "name": "Announcements", "count": 10, "mapsToSections": ["announcement"], "priority": "secondary" },
+        { "name": "Backgrounds", "count": 33, "mapsToSections": ["background"], "priority": "secondary" },
+        { "name": "Borders", "count": 12, "mapsToSections": ["decoration"], "priority": "secondary" },
+        { "name": "Calls to Action", "count": 34, "mapsToSections": ["contact", "cta"], "priority": "core" },
+        { "name": "Clients", "count": 16, "mapsToSections": ["logos", "social proof"], "priority": "core" },
+        { "name": "Comparisons", "count": 6, "mapsToSections": ["comparison"], "priority": "core" },
+        { "name": "Docs", "count": 6, "mapsToSections": ["documentation"], "priority": "secondary" },
+        { "name": "Features", "count": 36, "mapsToSections": ["features", "services"], "priority": "core" },
+        { "name": "Footers", "count": 14, "mapsToSections": ["footer"], "priority": "secondary" },
+        { "name": "Heroes", "count": 73, "mapsToSections": ["hero"], "priority": "core" },
+        { "name": "Hooks", "count": 31, "mapsToSections": ["hero", "headline"], "priority": "secondary" },
+        { "name": "Images", "count": 26, "mapsToSections": ["media"], "priority": "secondary" },
+        { "name": "Maps", "count": 2, "mapsToSections": ["map", "service areas"], "priority": "secondary" },
+        { "name": "Navigation Menus", "count": 11, "mapsToSections": ["navigation"], "priority": "secondary" },
+        { "name": "Pricing Sections", "count": 17, "mapsToSections": ["pricing"], "priority": "core" },
+        { "name": "Scroll Areas", "count": 24, "mapsToSections": ["content rail"], "priority": "secondary" },
+        { "name": "Shaders", "count": 15, "mapsToSections": ["visual treatment"], "priority": "secondary" },
+        { "name": "Testimonials", "count": 15, "mapsToSections": ["testimonials"], "priority": "core" },
+        { "name": "Texts", "count": 58, "mapsToSections": ["copy blocks"], "priority": "secondary" },
+        { "name": "Videos", "count": 9, "mapsToSections": ["video"], "priority": "secondary" }
+      ]
+    },
+    {
+      "name": "UI Components",
+      "categories": [
+        { "name": "Accordions", "count": 40, "mapsToSections": ["faq"], "priority": "core" },
+        { "name": "AI Chats", "count": 30, "mapsToSections": ["chat ui"], "priority": "secondary" },
+        { "name": "Alerts", "count": 23, "mapsToSections": ["notification"], "priority": "secondary" },
+        { "name": "Avatars", "count": 17, "mapsToSections": ["people"], "priority": "secondary" },
+        { "name": "Badges", "count": 25, "mapsToSections": ["trust indicators"], "priority": "secondary" },
+        { "name": "Buttons", "count": 130, "mapsToSections": ["cta"], "priority": "secondary" },
+        { "name": "Calendars", "count": 34, "mapsToSections": ["calendar"], "priority": "secondary" },
+        { "name": "Cards", "count": 79, "mapsToSections": ["cards"], "priority": "secondary" },
+        { "name": "Carousels", "count": 16, "mapsToSections": ["carousel"], "priority": "secondary" },
+        { "name": "Checkboxes", "count": 19, "mapsToSections": ["form controls"], "priority": "secondary" },
+        { "name": "Date Pickers", "count": 12, "mapsToSections": ["form controls"], "priority": "secondary" },
+        { "name": "Dialogs / Modals", "count": 37, "mapsToSections": ["modal"], "priority": "secondary" },
+        { "name": "Dropdowns", "count": 25, "mapsToSections": ["form controls"], "priority": "secondary" },
+        { "name": "Empty States", "count": 1, "mapsToSections": ["empty state"], "priority": "secondary" },
+        { "name": "File Trees", "count": 2, "mapsToSections": ["navigation"], "priority": "secondary" },
+        { "name": "File Uploads", "count": 7, "mapsToSections": ["upload"], "priority": "secondary" },
+        { "name": "Forms", "count": 23, "mapsToSections": ["contact", "signup"], "priority": "core" },
+        { "name": "Icons", "count": 10, "mapsToSections": ["iconography"], "priority": "secondary" },
+        { "name": "Inputs", "count": 102, "mapsToSections": ["forms"], "priority": "secondary" },
+        { "name": "Links", "count": 13, "mapsToSections": ["navigation"], "priority": "secondary" },
+        { "name": "Menus", "count": 18, "mapsToSections": ["navigation"], "priority": "secondary" },
+        { "name": "Notifications", "count": 5, "mapsToSections": ["notification"], "priority": "secondary" },
+        { "name": "Numbers", "count": 18, "mapsToSections": ["stats", "process"], "priority": "core" },
+        { "name": "Paginations", "count": 20, "mapsToSections": ["pagination"], "priority": "secondary" },
+        { "name": "Popovers", "count": 23, "mapsToSections": ["tooltip"], "priority": "secondary" },
+        { "name": "Radio Groups", "count": 22, "mapsToSections": ["form controls"], "priority": "secondary" },
+        { "name": "Selects", "count": 62, "mapsToSections": ["form controls"], "priority": "secondary" },
+        { "name": "Sidebars", "count": 10, "mapsToSections": ["sidebar"], "priority": "secondary" },
+        { "name": "Sign Ins", "count": 4, "mapsToSections": ["authentication"], "priority": "secondary" },
+        { "name": "Sign ups", "count": 4, "mapsToSections": ["signup"], "priority": "secondary" },
+        { "name": "Sliders", "count": 45, "mapsToSections": ["carousel"], "priority": "secondary" },
+        { "name": "Spinner Loaders", "count": 21, "mapsToSections": ["loading"], "priority": "secondary" },
+        { "name": "Tables", "count": 30, "mapsToSections": ["data table"], "priority": "secondary" },
+        { "name": "Tabs", "count": 38, "mapsToSections": ["tabs"], "priority": "secondary" },
+        { "name": "Tags", "count": 6, "mapsToSections": ["badges"], "priority": "secondary" },
+        { "name": "Text Areas", "count": 22, "mapsToSections": ["forms"], "priority": "secondary" },
+        { "name": "Toasts", "count": 2, "mapsToSections": ["notification"], "priority": "secondary" },
+        { "name": "Toggles", "count": 12, "mapsToSections": ["form controls"], "priority": "secondary" },
+        { "name": "Tooltips", "count": 28, "mapsToSections": ["tooltip"], "priority": "secondary" }
+      ]
+    }
+  ]
+}

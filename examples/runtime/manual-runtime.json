@@ -1,0 +1,32 @@
+{
+  "categories": [
+    { "name": "Heroes", "groupName": "Marketing Blocks" },
+    { "name": "Clients", "groupName": "Marketing Blocks" },
+    { "name": "Features", "groupName": "Marketing Blocks" },
+    { "name": "Pricing Sections", "groupName": "Marketing Blocks" },
+    { "name": "Accordions", "groupName": "UI Components" }
+  ],
+  "references": [
+    {
+      "id": "manual-hero",
+      "sourceUrl": "https://example.com/manual/hero",
+      "sourceName": "Manual Hero",
+      "categoryGroup": "Marketing Blocks",
+      "sourceCategory": "Heroes",
+      "priority": "core",
+      "sectionType": "hero",
+      "industries": ["ai", "saas"],
+      "siteTypes": ["product marketing"],
+      "tone": ["smart", "technical", "calm"],
+      "strengths": ["credibility"],
+      "visualTraits": {
+        "layout": "centered hero",
+        "background": "soft neutral",
+        "cardStyle": "clean panel",
+        "motionStyle": "gentle fade"
+      },
+      "notes": "Manual runtime hero reference.",
+      "screenshot": "./images/manual-hero.png"
+    }
+  ]
+}

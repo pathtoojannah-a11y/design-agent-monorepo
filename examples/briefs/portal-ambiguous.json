@@ -1,12 +1,11 @@
 {
-  "projectName": "Relay Forge",
+  "projectName": "Relay Forge Portal",
   "industry": "ai",
-  "siteType": "product marketing",
-  "targetAudience": "product and engineering teams evaluating an AI workflow platform",
+  "siteType": "customer portal platform",
+  "targetAudience": "operations teams evaluating a portal and dashboard platform",
   "goals": ["credibility", "feature explanation", "pricing presentation"],
   "tone": ["smart", "technical", "calm"],
-  "requiredSections": ["hero", "logos", "features", "pricing", "faq"],
-  "featureSignals": ["pricing"],
+  "requiredSections": ["hero", "features", "pricing"],
   "brand": {
     "primary": "#0A2540",
     "secondary": "#12B981",

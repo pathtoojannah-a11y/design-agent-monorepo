@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "GeneratedBuildSpec",
   "type": "object",
-  "required": ["project", "selectedSections", "sectionRationale", "globalVisualDirection", "brandAdaptation", "copyDirection", "implementationPrompt", "constraints"],
+  "required": ["project", "selectedSections", "sectionRationale", "globalVisualDirection", "brandAdaptation", "copyDirection", "implementationPrompt", "constraints", "primaryCategories", "expandedCategories", "questionsAsked", "confidenceSummary"],
   "properties": {
     "project": { "type": "object" },
     "selectedSections": { "type": "array", "items": { "type": "object" } },
@@ -11,6 +11,10 @@
     "brandAdaptation": { "type": "object" },
     "copyDirection": { "type": "object" },
     "implementationPrompt": { "type": "string" },
-    "constraints": { "type": "array", "items": { "type": "string" } }
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "primaryCategories": { "type": "array", "items": { "type": "string" } },
+    "expandedCategories": { "type": "array", "items": { "type": "string" } },
+    "questionsAsked": { "type": "array", "items": { "type": "object" } },
+    "confidenceSummary": { "type": "object" }
   }
 }
