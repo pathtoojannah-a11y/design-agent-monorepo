@@ -7,6 +7,8 @@ This repo ships two things:
 - reusable Codex and Claude agent definitions for design-reference workflows
 - a lightweight engine that evaluates curated reference metadata and produces compact build specs
 
+The main user-facing entrypoint is `Website Design Intelligence`, a top-level Codex/Claude skill/agent that wraps the repo workflow.
+
 The system is built to learn from strong reference patterns without mirroring third-party source code or assets.
 
 ## Repo shape
@@ -38,6 +40,18 @@ npm run collect:refresh -- --source-file=./examples/runtime/twentyfirst-session-
 ```bash
 npm test
 ```
+
+## Main entrypoint
+
+Use the top-level website-design orchestrator:
+
+- Codex: [website-design-intelligence.SKILL.md](./agents/codex/website-design-intelligence.SKILL.md)
+- Claude: [website-design-intelligence.md](./agents/claude/website-design-intelligence.md)
+
+Install/use instructions:
+
+- [install-codex-claude.md](./docs/install-codex-claude.md)
+- [orchestrator-contract.md](./docs/orchestrator-contract.md)
 
 ## Output model
 
