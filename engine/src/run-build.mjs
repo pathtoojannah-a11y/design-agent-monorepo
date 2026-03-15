@@ -1,12 +1,24 @@
 import { buildBuildSpec, buildClarificationResult } from "./adapter.mjs";
+import { getDefaultCacheDir } from "./collector/cache-paths.mjs";
 import { createCatalogProvider } from "./providers/catalog-provider.mjs";
 import { createManualRuntimeProvider } from "./providers/manual-runtime-provider.mjs";
+import { createTwentyFirstCacheProvider } from "./providers/twentyfirst-cache-provider.mjs";
 import { retrieveReferences } from "./retriever.mjs";
 import { routeCategories } from "./router.mjs";
 
-export function createProvider({ categoryIndex, references, providerKind = "catalog", runtimeData = {} }) {
+export function createProvider({
+  categoryIndex,
+  references,
+  providerKind = "catalog",
+  runtimeData = {},
+  cacheDir = getDefaultCacheDir()
+}) {
   if (providerKind === "manual-runtime") {
     return createManualRuntimeProvider(runtimeData);
+  }
+
+  if (providerKind === "21st-cache") {
+    return createTwentyFirstCacheProvider({ cacheDir });
   }
 
   return createCatalogProvider({ references, categoryIndex });
@@ -17,9 +29,16 @@ export function runBuildFlow({
   references,
   categoryIndex,
   providerKind = "catalog",
-  runtimeData = {}
+  runtimeData = {},
+  cacheDir = getDefaultCacheDir()
 }) {
-  const provider = createProvider({ categoryIndex, references, providerKind, runtimeData });
+  const provider = createProvider({
+    categoryIndex,
+    references,
+    providerKind,
+    runtimeData,
+    cacheDir
+  });
   const routing = routeCategories({
     brief,
     categoryIndex,

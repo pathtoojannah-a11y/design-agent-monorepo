@@ -32,6 +32,10 @@ npm run example:portal
 ```
 
 ```bash
+npm run collect:refresh -- --source-file=./examples/runtime/twentyfirst-session-export.json
+```
+
+```bash
 npm test
 ```
 
@@ -59,6 +63,12 @@ You can also use the manual runtime stub:
 node ./engine/src/cli.mjs ./examples/briefs/saas-ai-platform.json --provider=manual-runtime --runtime-file=./examples/runtime/manual-runtime.json
 ```
 
+You can also use the private 21st cache provider after collecting cache data:
+
+```bash
+node ./engine/src/cli.mjs ./examples/briefs/saas-ai-platform.json --provider=21st-cache
+```
+
 ## Compliance model
 
 This repo stores metadata only:
@@ -69,3 +79,13 @@ This repo stores metadata only:
 - business-fit metadata
 
 It does not store mirrored template code or proprietary assets.
+
+## Private 21st cache
+
+Collected 21st runtime data is written under `.local/21st-cache/`, which is gitignored.
+
+The current collector expects a browser/session export input file. That keeps the repo clean while letting you build a private cache locally:
+
+```bash
+npm run collect:refresh -- --source-file=./examples/runtime/twentyfirst-session-export.json
+```

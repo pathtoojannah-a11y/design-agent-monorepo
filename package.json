@@ -8,6 +8,10 @@
     "example:contractor": "node ./engine/src/cli.mjs ./examples/briefs/contractor-roofing.json",
     "example:saas": "node ./engine/src/cli.mjs ./examples/briefs/saas-ai-platform.json",
     "example:portal": "node ./engine/src/cli.mjs ./examples/briefs/portal-ambiguous.json",
+    "collect:refresh": "node ./engine/src/collector/cli.mjs refresh",
+    "collect:stale": "node ./engine/src/collector/cli.mjs refresh --stale-aware",
+    "collect:inspect-category": "node ./engine/src/collector/cli.mjs inspect-category",
+    "collect:inspect-template": "node ./engine/src/collector/cli.mjs inspect-template",
     "test": "node ./engine/tests/run-tests.mjs"
   }
 }

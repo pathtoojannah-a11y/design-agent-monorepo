@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TwentyFirstCache",
+  "type": "object",
+  "properties": {
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["groupName", "name", "count", "lastSeenAt"],
+        "properties": {
+          "groupName": { "type": "string" },
+          "name": { "type": "string" },
+          "count": { "type": "number" },
+          "lastSeenAt": { "type": "string" }
+        }
+      }
+    },
+    "templates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "sourceCategory", "sourceUrl", "sourceName", "lastSeenAt"],
+        "properties": {
+          "id": { "type": "string" },
+          "sourceCategory": { "type": "string" },
+          "sourceUrl": { "type": "string" },
+          "sourceName": { "type": "string" },
+          "previewUrl": { "type": "string" },
+          "description": { "type": "string" },
+          "lastSeenAt": { "type": "string" }
+        }
+      }
+    },
+    "collectionState": {
+      "type": "object",
+      "required": ["collectorVersion", "lastFullRefreshAt", "categoriesScanned", "failures"],
+      "properties": {
+        "collectorVersion": { "type": "string" },
+        "lastFullRefreshAt": { "type": "string" },
+        "categoriesScanned": { "type": "array", "items": { "type": "string" } },
+        "failures": { "type": "array", "items": { "type": "object" } }
+      }
+    }
+  }
+}

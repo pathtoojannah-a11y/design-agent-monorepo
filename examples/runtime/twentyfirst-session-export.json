@@ -1,0 +1,253 @@
+{
+  "collectedAt": "2026-03-15T12:00:00.000Z",
+  "groups": [
+    {
+      "name": "Marketing Blocks",
+      "categories": [
+        { "name": "Announcements", "count": 10, "priority": "secondary", "mapsToSections": ["announcement"], "templates": [] },
+        { "name": "Backgrounds", "count": 33, "priority": "secondary", "mapsToSections": ["background"], "templates": [] },
+        { "name": "Borders", "count": 12, "priority": "secondary", "mapsToSections": ["decoration"], "templates": [] },
+        {
+          "name": "Calls to Action",
+          "count": 34,
+          "priority": "core",
+          "mapsToSections": ["contact", "cta"],
+          "templates": [
+            {
+              "id": "cta-roofing-panel",
+              "title": "Roofing CTA Panel",
+              "url": "https://21st.dev/calls-to-action/roofing-cta-panel",
+              "previewUrl": "https://21st.dev/assets/roofing-cta-panel.png",
+              "sectionType": "contact",
+              "industries": ["roofing", "plumbing"],
+              "siteTypes": ["contractor lead generation"],
+              "tone": ["premium", "confident"],
+              "strengths": ["phone calls", "form submissions"],
+              "requiresFeatureSignals": ["forms"],
+              "visualTraits": {
+                "layout": "split cta panel",
+                "background": "dark accent block",
+                "cardStyle": "high contrast form card",
+                "motionStyle": "minimal emphasis"
+              },
+              "notes": "Strong contact section for local service conversion."
+            }
+          ]
+        },
+        {
+          "name": "Clients",
+          "count": 16,
+          "priority": "core",
+          "mapsToSections": ["logos", "social proof"],
+          "templates": [
+            {
+              "id": "clients-logo-strip",
+              "title": "Client Logo Strip",
+              "url": "https://21st.dev/clients/logo-strip",
+              "previewUrl": "https://21st.dev/assets/client-logo-strip.png",
+              "sectionType": "logos",
+              "industries": ["saas", "ai", "b2b"],
+              "siteTypes": ["product marketing"],
+              "tone": ["smart", "clean"],
+              "strengths": ["credibility"],
+              "visualTraits": {
+                "layout": "horizontal logo strip",
+                "background": "light panel",
+                "cardStyle": "minimal logo row",
+                "motionStyle": "subtle fade"
+              },
+              "notes": "Useful social proof strip."
+            }
+          ]
+        },
+        { "name": "Comparisons", "count": 6, "priority": "core", "mapsToSections": ["comparison"], "templates": [] },
+        { "name": "Docs", "count": 6, "priority": "secondary", "mapsToSections": ["documentation"], "templates": [] },
+        {
+          "name": "Features",
+          "count": 36,
+          "priority": "core",
+          "mapsToSections": ["features", "services"],
+          "templates": [
+            {
+              "id": "features-modular-grid",
+              "title": "Modular Features Grid",
+              "url": "https://21st.dev/features/modular-grid",
+              "previewUrl": "https://21st.dev/assets/modular-grid.png",
+              "sectionType": "features",
+              "industries": ["ai", "saas", "roofing"],
+              "siteTypes": ["product marketing", "contractor lead generation"],
+              "tone": ["smart", "clean", "premium"],
+              "strengths": ["feature explanation", "service clarity"],
+              "visualTraits": {
+                "layout": "alternating feature grid",
+                "background": "clean neutral",
+                "cardStyle": "elevated cards",
+                "motionStyle": "gentle stagger"
+              },
+              "notes": "Flexible features/services section."
+            }
+          ]
+        },
+        { "name": "Footers", "count": 14, "priority": "secondary", "mapsToSections": ["footer"], "templates": [] },
+        {
+          "name": "Heroes",
+          "count": 73,
+          "priority": "core",
+          "mapsToSections": ["hero"],
+          "templates": [
+            {
+              "id": "hero-editorial",
+              "title": "Editorial Hero",
+              "url": "https://21st.dev/heroes/editorial-hero",
+              "previewUrl": "https://21st.dev/assets/editorial-hero.png",
+              "sectionType": "hero",
+              "industries": ["roofing", "ai", "saas"],
+              "siteTypes": ["contractor lead generation", "product marketing"],
+              "tone": ["premium", "smart", "confident"],
+              "strengths": ["trust building", "credibility"],
+              "visualTraits": {
+                "layout": "editorial asymmetry",
+                "background": "neutral field",
+                "cardStyle": "supporting stat cards",
+                "motionStyle": "measured reveal"
+              },
+              "notes": "Strong opening section."
+            }
+          ]
+        },
+        { "name": "Hooks", "count": 31, "priority": "secondary", "mapsToSections": ["hero", "headline"], "templates": [] },
+        { "name": "Images", "count": 26, "priority": "secondary", "mapsToSections": ["media"], "templates": [] },
+        { "name": "Maps", "count": 2, "priority": "secondary", "mapsToSections": ["map", "service areas"], "templates": [] },
+        { "name": "Navigation Menus", "count": 11, "priority": "secondary", "mapsToSections": ["navigation"], "templates": [] },
+        {
+          "name": "Pricing Sections",
+          "count": 17,
+          "priority": "core",
+          "mapsToSections": ["pricing"],
+          "templates": [
+            {
+              "id": "pricing-tier-grid",
+              "title": "Pricing Tier Grid",
+              "url": "https://21st.dev/pricing/tier-grid",
+              "previewUrl": "https://21st.dev/assets/pricing-tier-grid.png",
+              "sectionType": "pricing",
+              "industries": ["ai", "saas"],
+              "siteTypes": ["product marketing"],
+              "tone": ["smart", "calm"],
+              "strengths": ["pricing presentation"],
+              "requiresFeatureSignals": ["pricing"],
+              "visualTraits": {
+                "layout": "three tier pricing",
+                "background": "soft panel field",
+                "cardStyle": "pricing cards",
+                "motionStyle": "minimal hover"
+              },
+              "notes": "Clear pricing block."
+            }
+          ]
+        },
+        { "name": "Scroll Areas", "count": 24, "priority": "secondary", "mapsToSections": ["content rail"], "templates": [] },
+        { "name": "Shaders", "count": 15, "priority": "secondary", "mapsToSections": ["visual treatment"], "templates": [] },
+        {
+          "name": "Testimonials",
+          "count": 15,
+          "priority": "core",
+          "mapsToSections": ["testimonials"],
+          "templates": [
+            {
+              "id": "testimonial-story-stack",
+              "title": "Testimonial Story Stack",
+              "url": "https://21st.dev/testimonials/story-stack",
+              "previewUrl": "https://21st.dev/assets/story-stack.png",
+              "sectionType": "testimonials",
+              "industries": ["roofing", "saas"],
+              "siteTypes": ["contractor lead generation", "product marketing"],
+              "tone": ["premium", "trustworthy"],
+              "strengths": ["trust building", "credibility"],
+              "requiresFeatureSignals": ["testimonial-heavy"],
+              "visualTraits": {
+                "layout": "stacked testimonial cards",
+                "background": "dark surface",
+                "cardStyle": "review cards",
+                "motionStyle": "card rise"
+              },
+              "notes": "Strong trust section."
+            }
+          ]
+        },
+        { "name": "Texts", "count": 58, "priority": "secondary", "mapsToSections": ["copy blocks"], "templates": [] },
+        { "name": "Videos", "count": 9, "priority": "secondary", "mapsToSections": ["video"], "templates": [] }
+      ]
+    },
+    {
+      "name": "UI Components",
+      "categories": [
+        { "name": "Accordions", "count": 40, "priority": "core", "mapsToSections": ["faq"], "templates": [] },
+        { "name": "AI Chats", "count": 30, "priority": "secondary", "mapsToSections": ["chat ui"], "templates": [] },
+        { "name": "Alerts", "count": 23, "priority": "secondary", "mapsToSections": ["notification"], "templates": [] },
+        { "name": "Avatars", "count": 17, "priority": "secondary", "mapsToSections": ["people"], "templates": [] },
+        { "name": "Badges", "count": 25, "priority": "secondary", "mapsToSections": ["trust indicators"], "templates": [] },
+        { "name": "Buttons", "count": 130, "priority": "secondary", "mapsToSections": ["cta"], "templates": [] },
+        { "name": "Calendars", "count": 34, "priority": "secondary", "mapsToSections": ["calendar"], "templates": [] },
+        { "name": "Cards", "count": 79, "priority": "secondary", "mapsToSections": ["cards"], "templates": [] },
+        { "name": "Carousels", "count": 16, "priority": "secondary", "mapsToSections": ["carousel"], "templates": [] },
+        { "name": "Checkboxes", "count": 19, "priority": "secondary", "mapsToSections": ["form controls"], "templates": [] },
+        { "name": "Date Pickers", "count": 12, "priority": "secondary", "mapsToSections": ["form controls"], "templates": [] },
+        { "name": "Dialogs / Modals", "count": 37, "priority": "secondary", "mapsToSections": ["modal"], "templates": [] },
+        { "name": "Dropdowns", "count": 25, "priority": "secondary", "mapsToSections": ["form controls"], "templates": [] },
+        { "name": "Empty States", "count": 1, "priority": "secondary", "mapsToSections": ["empty state"], "templates": [] },
+        { "name": "File Trees", "count": 2, "priority": "secondary", "mapsToSections": ["navigation"], "templates": [] },
+        { "name": "File Uploads", "count": 7, "priority": "secondary", "mapsToSections": ["upload"], "templates": [] },
+        {
+          "name": "Forms",
+          "count": 23,
+          "priority": "core",
+          "mapsToSections": ["contact", "signup"],
+          "templates": [
+            {
+              "id": "form-short-contact",
+              "title": "Short Contact Form",
+              "url": "https://21st.dev/forms/short-contact",
+              "previewUrl": "https://21st.dev/assets/short-contact.png",
+              "sectionType": "contact",
+              "industries": ["roofing", "saas"],
+              "siteTypes": ["contractor lead generation", "product marketing"],
+              "tone": ["clean"],
+              "strengths": ["form submissions"],
+              "requiresFeatureSignals": ["forms"],
+              "visualTraits": {
+                "layout": "compact form block",
+                "background": "light card",
+                "cardStyle": "bordered form",
+                "motionStyle": "minimal"
+              },
+              "notes": "Compact conversion form."
+            }
+          ]
+        },
+        { "name": "Icons", "count": 10, "priority": "secondary", "mapsToSections": ["iconography"], "templates": [] },
+        { "name": "Inputs", "count": 102, "priority": "secondary", "mapsToSections": ["forms"], "templates": [] },
+        { "name": "Links", "count": 13, "priority": "secondary", "mapsToSections": ["navigation"], "templates": [] },
+        { "name": "Menus", "count": 18, "priority": "secondary", "mapsToSections": ["navigation"], "templates": [] },
+        { "name": "Notifications", "count": 5, "priority": "secondary", "mapsToSections": ["notification"], "templates": [] },
+        { "name": "Numbers", "count": 18, "priority": "core", "mapsToSections": ["stats", "process"], "templates": [] },
+        { "name": "Paginations", "count": 20, "priority": "secondary", "mapsToSections": ["pagination"], "templates": [] },
+        { "name": "Popovers", "count": 23, "priority": "secondary", "mapsToSections": ["tooltip"], "templates": [] },
+        { "name": "Radio Groups", "count": 22, "priority": "secondary", "mapsToSections": ["form controls"], "templates": [] },
+        { "name": "Selects", "count": 62, "priority": "secondary", "mapsToSections": ["form controls"], "templates": [] },
+        { "name": "Sidebars", "count": 10, "priority": "secondary", "mapsToSections": ["sidebar"], "templates": [] },
+        { "name": "Sign Ins", "count": 4, "priority": "secondary", "mapsToSections": ["authentication"], "templates": [] },
+        { "name": "Sign ups", "count": 4, "priority": "secondary", "mapsToSections": ["signup"], "templates": [] },
+        { "name": "Sliders", "count": 45, "priority": "secondary", "mapsToSections": ["carousel"], "templates": [] },
+        { "name": "Spinner Loaders", "count": 21, "priority": "secondary", "mapsToSections": ["loading"], "templates": [] },
+        { "name": "Tables", "count": 30, "priority": "secondary", "mapsToSections": ["data table"], "templates": [] },
+        { "name": "Tabs", "count": 38, "priority": "secondary", "mapsToSections": ["tabs"], "templates": [] },
+        { "name": "Tags", "count": 6, "priority": "secondary", "mapsToSections": ["badges"], "templates": [] },
+        { "name": "Text Areas", "count": 22, "priority": "secondary", "mapsToSections": ["forms"], "templates": [] },
+        { "name": "Toasts", "count": 2, "priority": "secondary", "mapsToSections": ["notification"], "templates": [] },
+        { "name": "Toggles", "count": 12, "priority": "secondary", "mapsToSections": ["form controls"], "templates": [] },
+        { "name": "Tooltips", "count": 28, "priority": "secondary", "mapsToSections": ["tooltip"], "templates": [] }
+      ]
+    }
+  ]
+}

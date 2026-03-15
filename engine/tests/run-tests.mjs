@@ -1,9 +1,12 @@
 import assert from "node:assert/strict";
 import { composeBuildSpec } from "../src/compose.mjs";
-import { loadJson, resolveFromRoot } from "../src/io.mjs";
+import { collectTwentyFirstCache, inspectCollectedCategory, inspectCollectedTemplate, refreshTwentyFirstCache } from "../src/collector/collector.mjs";
+import { loadJson, removeDir, resolveFromRoot } from "../src/io.mjs";
 
 const references = loadJson(resolveFromRoot("catalog", "references.json"));
 const categoryIndex = loadJson(resolveFromRoot("catalog", "category-index.json"));
+const collectorFixture = resolveFromRoot("examples", "runtime", "twentyfirst-session-export.json");
+const cacheDir = resolveFromRoot(".test-output", "21st-cache");
 const contractorBrief = loadJson(
   resolveFromRoot("examples", "briefs", "contractor-roofing.json")
 );
@@ -117,5 +120,53 @@ const manualRuntimeSpec = composeBuildSpec(
 
 assert.equal(manualRuntimeSpec.selectedSections[0].referenceId, "manual-hero");
 assert.equal(manualRuntimeSpec.primaryCategories.includes("Heroes"), true);
+
+removeDir(cacheDir);
+
+const collectionResult = collectTwentyFirstCache({
+  sourceFile: collectorFixture,
+  baselineCategoryIndex: categoryIndex,
+  cacheDir
+});
+assert.equal(collectionResult.categoriesWritten, 59);
+assert.ok(collectionResult.templatesWritten >= 6);
+assert.equal(collectionResult.collectionState.baselineDiff.missingFromCollection.length, 0);
+
+const heroesCategory = inspectCollectedCategory({
+  cacheDir,
+  categoryName: "Heroes"
+});
+assert.equal(heroesCategory.category.name, "Heroes");
+assert.ok(heroesCategory.templates.some((template) => template.id === "hero-editorial"));
+
+const heroTemplate = inspectCollectedTemplate({
+  cacheDir,
+  templateId: "hero-editorial"
+});
+assert.equal(heroTemplate.sourceCategory, "Heroes");
+
+const cachedRefresh = refreshTwentyFirstCache({
+  sourceFile: collectorFixture,
+  baselineCategoryIndex: categoryIndex,
+  cacheDir,
+  staleAware: true,
+  maxAgeHours: 999
+});
+assert.equal(cachedRefresh.reusedCache, true);
+
+const cacheProviderSpec = composeBuildSpec(
+  saasBrief,
+  references,
+  categoryIndex,
+  {
+    providerKind: "21st-cache",
+    cacheDir
+  }
+);
+assert.ok(
+  cacheProviderSpec.selectedSections.some((section) => section.referenceId === "hero-editorial")
+);
+
+removeDir(cacheDir);
 
 console.log("All tests passed.");

@@ -22,8 +22,25 @@ The engine talks to a provider rather than directly to a specific source.
 
 - `CatalogProvider`: uses repo metadata only
 - `ManualRuntimeProvider`: stub adapter shaped for future live/private access
+- `TwentyFirstCacheProvider`: reads the local private 21st cache
 
 This keeps the engine stable while leaving room for a future live 21st provider.
+
+## Collector model
+
+The collector is separate from ranking/build-spec generation.
+
+- Pass 1: collect every category and visible template card from 21st into the private cache
+- Pass 2: let the engine query that cache during build-spec runs
+
+The current collector path expects a session export or equivalent browser-captured data source. That keeps the repo public-safe while still supporting private/local 21st data.
+
+## Refresh behavior
+
+- `collect:refresh`: rebuild the private cache from the provided session export
+- `collect:stale`: reuse the cache if it is still fresh, otherwise refresh it
+- `collect:inspect-category`: inspect one cached category and its templates
+- `collect:inspect-template`: inspect one cached template
 
 ## Interactive pause
 
