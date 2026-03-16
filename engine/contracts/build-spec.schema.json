@@ -12,6 +12,31 @@
     "copyDirection": { "type": "object" },
     "implementationPrompt": { "type": "string" },
     "constraints": { "type": "array", "items": { "type": "string" } },
+    "componentRecipes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "sourceName": { "type": "string" },
+          "sourceCategory": { "type": "string" },
+          "itemKind": { "type": "string" },
+          "targetStack": { "type": "object" },
+          "destinationPaths": { "type": "object" },
+          "install": { "type": "object" },
+          "supportFiles": { "type": "array", "items": { "type": "string" } },
+          "adaptationNotes": { "type": "array", "items": { "type": "string" } },
+          "promptRecipe": { "type": ["object", "null"] },
+          "resolvedPromptRecipe": { "type": ["object", "null"] },
+          "completenessStatus": { "type": ["string", "null"] },
+          "missingFields": { "type": "array", "items": { "type": "string" } },
+          "provenance": { "type": ["object", "null"] }
+        }
+      }
+    },
+    "cacheHealth": { "type": ["object", "null"] },
+    "coverageWarnings": { "type": "array", "items": { "type": "object" } },
+    "warnings": { "type": "array", "items": { "type": "string" } },
     "primaryCategories": { "type": "array", "items": { "type": "string" } },
     "expandedCategories": { "type": "array", "items": { "type": "string" } },
     "questionsAsked": { "type": "array", "items": { "type": "object" } },

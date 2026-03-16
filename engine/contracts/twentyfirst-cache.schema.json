@@ -75,6 +75,41 @@
               "requiredAssets": { "type": "array", "items": { "type": "string" } }
             }
           },
+          "promptRecipe": {
+            "type": "object",
+            "properties": {
+              "sourcePrompt": { "type": "string" },
+              "componentFiles": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": { "type": "string" },
+                    "content": { "type": "string" },
+                    "description": { "type": ["string", "null"] }
+                  }
+                }
+              },
+              "dependencyFiles": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": { "type": "string" },
+                    "content": { "type": "string" },
+                    "description": { "type": ["string", "null"] }
+                  }
+                }
+              },
+              "installPackages": { "type": "array", "items": { "type": "string" } },
+              "installCommand": { "type": ["string", "null"] },
+              "demoCode": { "type": "string" },
+              "assetNotes": { "type": ["string", "null"] },
+              "adaptationGuidance": { "type": "array", "items": { "type": "string" } },
+              "requiredAssets": { "type": "array", "items": { "type": "string" } },
+              "supportFiles": { "type": "array", "items": { "type": "string" } }
+            }
+          },
           "normalizedRecipe": {
             "type": "object",
             "required": ["targetStack", "compatibility", "destinationPaths"],
@@ -108,6 +143,8 @@
         "itemCountsByCategory",
         "staleCategories",
         "lastSeenByCategory",
+        "totalItemsDiscovered",
+        "itemStatusCounts",
         "coverageStatus",
         "failures"
       ],
@@ -120,6 +157,8 @@
         "itemCountsByCategory": { "type": "object" },
         "staleCategories": { "type": "array", "items": { "type": "string" } },
         "lastSeenByCategory": { "type": "object" },
+        "totalItemsDiscovered": { "type": "number" },
+        "itemStatusCounts": { "type": "object" },
         "coverageStatus": {
           "type": "string",
           "enum": ["healthy", "incomplete", "stale"]

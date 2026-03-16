@@ -9,12 +9,15 @@ Use this when:
 
 Default behavior:
 1. Convert the user request into a structured website brief if needed.
-2. Prefer the private `21st-cache` provider when cache data exists.
-3. Refresh the cache only when it is missing or stale.
-4. Analyze categories, references, and sections through the repo engine.
-5. Ask only short clarification questions when category choice materially affects the result.
-6. Return a compact build spec first.
-7. Generate code only if explicitly requested afterward.
+2. Treat 21st as the primary design source whenever the project calls for 21st-informed website direction.
+3. Check private 21st cache coverage first and do not assume cache existence means full 21st visibility.
+4. If the cache is incomplete or stale for relevant categories, inspect live 21st category pages and item inventories before planning from them.
+5. Separate cached items, live-discovered items, and chosen references in the analysis.
+6. When private item-detail records include prompt/code recipes, use them to understand how the pattern is built before adapting it.
+7. Analyze categories, references, and sections through the repo engine after discovery.
+8. Ask only short clarification questions when category choice materially affects the result.
+9. Return a compact build spec first.
+10. Generate code only if explicitly requested afterward.
 
 Inputs:
 - freeform website brief or project request
@@ -24,11 +27,14 @@ Inputs:
 Output:
 - build spec by default
 - clarification result when needed
+- when 21st is the primary source, include the categories inspected and the actual items found before recommending a direction
 - optional implementation output later
 
 Repo commands:
 - Refresh 21st cache:
   - `node ./engine/src/collector/cli.mjs refresh --source-file=./examples/runtime/twentyfirst-session-export.json`
+- Inspect cache completeness:
+  - `node ./engine/src/collector/cli.mjs coverage`
 - Run planning with 21st cache:
   - `node ./engine/src/cli.mjs <brief.json> --provider=21st-cache`
 - Run planning with catalog only:
@@ -36,7 +42,10 @@ Repo commands:
 
 Rules:
 - use the lower-level specialist agents as internal building blocks
-- stay cache-first and analysis-first
+- use private cache as a starting point, not as proof of full 21st coverage
+- inspect live 21st categories when cache coverage is partial for the categories that matter
+- do not claim broad 21st access unless actual items are enumerated
+- when prompt/code recipes are available in private item details, use them as reusable learning/adaptation material
 - adapt references into the user's brand system instead of cloning them
 - only ask questions when the answer materially changes category choice or structure
 

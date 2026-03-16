@@ -15,6 +15,8 @@ export function getCachePaths(cacheDir = getDefaultCacheDir()) {
     categories: path.resolve(cacheDir, "categories.json"),
     templates: path.resolve(cacheDir, "templates.json"),
     collectionState: path.resolve(cacheDir, "collection-state.json"),
+    inventory: path.resolve(cacheDir, "inventory.json"),
+    queue: path.resolve(cacheDir, "collection-queue.json"),
     itemsDir: path.resolve(cacheDir, "items")
   };
 }

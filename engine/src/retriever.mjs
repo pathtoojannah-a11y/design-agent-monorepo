@@ -113,6 +113,7 @@ function getComponentRecipes(provider, categories) {
     const references = provider.getCategoryReferences(category);
     for (const reference of references) {
       const detail = provider.getItemDetails?.(reference.id);
+      const itemStatus = provider.getItemStatus?.(reference.id) ?? null;
       if (!detail?.normalizedRecipe || seen.has(detail.id)) {
         continue;
       }
@@ -127,7 +128,15 @@ function getComponentRecipes(provider, categories) {
         destinationPaths: detail.normalizedRecipe.destinationPaths,
         install: detail.normalizedRecipe.install,
         supportFiles: detail.normalizedRecipe.supportFiles,
-        adaptationNotes: detail.normalizedRecipe.adaptationNotes
+        adaptationNotes: detail.normalizedRecipe.adaptationNotes,
+        promptRecipe: detail.promptRecipe ?? null,
+        resolvedPromptRecipe: detail.resolvedPromptRecipe ?? detail.promptRecipe ?? null,
+        completenessStatus: itemStatus?.status ?? null,
+        missingFields: itemStatus?.missingFields ?? [],
+        provenance: {
+          source: provider.kind,
+          recipeStatus: itemStatus?.status ?? null
+        }
       });
     }
   }

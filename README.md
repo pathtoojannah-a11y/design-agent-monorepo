@@ -52,6 +52,7 @@ Install/use instructions:
 
 - [install-codex-claude.md](./docs/install-codex-claude.md)
 - [orchestrator-contract.md](./docs/orchestrator-contract.md)
+- [other-project-bootstrap.md](./docs/other-project-bootstrap.md)
 
 ## Output model
 
@@ -65,6 +66,8 @@ The default engine output is a compact JSON build spec containing:
 - component recipes when available from the private 21st arsenal
 - implementation prompt
 - non-cloning constraints
+
+Private component recipes can include prompt-style integration guidance, dependency snippets, support-file code, demo usage, and adaptation notes for 21st-backed patterns.
 
 When the brief is ambiguous and an extra category could materially change the result, the engine returns a structured `needs_clarification` response instead of guessing.
 
@@ -99,6 +102,8 @@ This repo stores metadata only:
 
 It does not store mirrored template code or proprietary assets.
 
+Richer prompt/code recipes derived from 21st items stay local/private under `.local/21st-cache/` and are not committed to the public repo.
+
 ## Private 21st cache
 
 Collected 21st runtime data is written under `.local/21st-cache/`, which is gitignored.
@@ -107,7 +112,7 @@ The collector keeps three private cache layers:
 
 - `categories.json`: visible category index
 - `templates.json`: lightweight item index
-- `items/*.json`: rich private item-detail records with normalized recipe metadata
+- `items/*.json`: rich private item-detail records with normalized recipe metadata plus prompt/code recipe content
 
 The collector can merge repeated browser/session exports into that cache while preserving prior good coverage:
 
@@ -119,4 +124,20 @@ You can inspect cache completeness at any time:
 
 ```bash
 npm run collect:coverage
+```
+
+You can inspect the private item inventory and backfill queue:
+
+```bash
+npm run collect:inventory
+```
+
+```bash
+npm run collect:queue
+```
+
+You can manually import one or more item recipes into the private arsenal:
+
+```bash
+npm run collect:import-item -- --source-file=./path/to/item-recipe.json
 ```

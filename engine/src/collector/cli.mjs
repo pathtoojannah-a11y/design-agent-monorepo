@@ -1,4 +1,12 @@
-import { inspectCollectedCategory, inspectCollectedTemplate, readCacheHealth, refreshTwentyFirstCache } from "./collector.mjs";
+import {
+  importTwentyFirstItems,
+  inspectCollectedCategory,
+  inspectCollectedInventory,
+  inspectCollectedTemplate,
+  readCacheHealth,
+  readCollectionQueue,
+  refreshTwentyFirstCache
+} from "./collector.mjs";
 import { loadJson, resolveFromRoot } from "../io.mjs";
 import { getDefaultCacheDir } from "./cache-paths.mjs";
 
@@ -49,6 +57,22 @@ if (command === "refresh") {
   console.log(JSON.stringify(inspectCollectedTemplate({ cacheDir, templateId }), null, 2));
 } else if (command === "coverage") {
   console.log(JSON.stringify(readCacheHealth(cacheDir, maxAgeHours), null, 2));
+} else if (command === "inventory") {
+  const status = getArgValue(args, "--status=");
+  const categoryName = getArgValue(args, "--category=");
+  console.log(JSON.stringify(inspectCollectedInventory({ cacheDir, status, categoryName }), null, 2));
+} else if (command === "queue") {
+  console.log(JSON.stringify(readCollectionQueue(cacheDir), null, 2));
+} else if (command === "import-item") {
+  const sourceFiles = getArgValues(args, "--source-file=");
+  const baselineCategoryIndex = loadJson(resolveFromRoot("catalog", "category-index.json"));
+  const result = importTwentyFirstItems({
+    sourceFile: sourceFiles[0],
+    sourceFiles,
+    cacheDir,
+    baselineCategoryIndex
+  });
+  console.log(JSON.stringify(result, null, 2));
 } else {
   throw new Error(`Unknown collector command: ${command}`);
 }
