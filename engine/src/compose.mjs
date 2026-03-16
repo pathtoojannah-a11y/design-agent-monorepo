@@ -7,6 +7,7 @@ export function composeBuildSpec(brief, references, categoryIndex, options = {})
     categoryIndex,
     providerKind: options.providerKind ?? "catalog",
     runtimeData: options.runtimeData ?? {},
-    cacheDir: options.cacheDir
+    cacheDir: options.cacheDir,
+    maxAgeHours: options.maxAgeHours ?? 24
   });
 }

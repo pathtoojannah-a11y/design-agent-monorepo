@@ -71,6 +71,20 @@ export function buildBuildSpec({ brief, retrieval }) {
     `Copy direction: ${copyDirection.headlineStyle}. Target ${brief.goals.join(", ")} without cloning the source references.`
   ].join(" ");
 
+  const warnings = [];
+  if (retrieval.cacheHealth?.status && retrieval.cacheHealth.status !== "healthy") {
+    warnings.push(
+      `21st cache coverage is ${retrieval.cacheHealth.status}; refresh or expand the private cache before treating this as full-library output.`
+    );
+  }
+  if ((retrieval.coverageWarnings ?? []).length > 0) {
+    warnings.push(
+      `Categories still missing or stale coverage: ${retrieval.coverageWarnings
+        .map((warning) => warning.categoryName)
+        .join(", ")}.`
+    );
+  }
+
   return {
     project: {
       projectName: brief.projectName,
@@ -88,6 +102,10 @@ export function buildBuildSpec({ brief, retrieval }) {
       "Use references as structural inspiration only, then restyle into the target brand system.",
       "When combining sections from multiple sources, smooth spacing, tone, and CTA language so the final page reads as one product."
     ],
+    componentRecipes: retrieval.componentRecipes ?? [],
+    cacheHealth: retrieval.cacheHealth ?? null,
+    coverageWarnings: retrieval.coverageWarnings ?? [],
+    warnings,
     primaryCategories: retrieval.primaryCategories,
     expandedCategories: retrieval.expandedCategories,
     questionsAsked: retrieval.questionsAsked,
@@ -110,6 +128,8 @@ export function buildClarificationResult({ brief, routing, retrieval }) {
     expandedCategories: [],
     pendingQuestion: question,
     questionsAsked: retrieval.questionsAsked,
+    cacheHealth: retrieval.cacheHealth ?? null,
+    coverageWarnings: retrieval.coverageWarnings ?? [],
     confidenceSummary: retrieval.confidenceSummary,
     nextStep: `Add brief.clarifications.${question.signal} with a value like "marketing-only" or "needs-auth", then rerun.`
   };

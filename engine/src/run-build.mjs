@@ -11,14 +11,15 @@ export function createProvider({
   references,
   providerKind = "catalog",
   runtimeData = {},
-  cacheDir = getDefaultCacheDir()
+  cacheDir = getDefaultCacheDir(),
+  maxAgeHours = 24
 }) {
   if (providerKind === "manual-runtime") {
     return createManualRuntimeProvider(runtimeData);
   }
 
   if (providerKind === "21st-cache") {
-    return createTwentyFirstCacheProvider({ cacheDir });
+    return createTwentyFirstCacheProvider({ cacheDir, maxAgeHours });
   }
 
   return createCatalogProvider({ references, categoryIndex });
@@ -30,14 +31,16 @@ export function runBuildFlow({
   categoryIndex,
   providerKind = "catalog",
   runtimeData = {},
-  cacheDir = getDefaultCacheDir()
+  cacheDir = getDefaultCacheDir(),
+  maxAgeHours = 24
 }) {
   const provider = createProvider({
     categoryIndex,
     references,
     providerKind,
     runtimeData,
-    cacheDir
+    cacheDir,
+    maxAgeHours
   });
   const routing = routeCategories({
     brief,

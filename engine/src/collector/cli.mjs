@@ -1,4 +1,4 @@
-import { inspectCollectedCategory, inspectCollectedTemplate, refreshTwentyFirstCache } from "./collector.mjs";
+import { inspectCollectedCategory, inspectCollectedTemplate, readCacheHealth, refreshTwentyFirstCache } from "./collector.mjs";
 import { loadJson, resolveFromRoot } from "../io.mjs";
 import { getDefaultCacheDir } from "./cache-paths.mjs";
 
@@ -7,17 +7,28 @@ function getArgValue(args, prefix, fallback = null) {
   return entry ? entry.slice(prefix.length) : fallback;
 }
 
+function getArgValues(args, prefix) {
+  return args
+    .filter((arg) => arg.startsWith(prefix))
+    .map((arg) => arg.slice(prefix.length));
+}
+
 const args = process.argv.slice(2);
 const command = args[0] ?? "refresh";
 const cacheDir = getArgValue(args, "--cache-dir=", getDefaultCacheDir());
+const maxAgeHours = Number(getArgValue(args, "--max-age-hours=", "24"));
 
 if (command === "refresh") {
-  const sourceFile = getArgValue(args, "--source-file=", "./examples/runtime/twentyfirst-session-export.json");
+  const sourceFiles = getArgValues(args, "--source-file=");
+  const sourceDir = getArgValue(args, "--source-dir=");
   const staleAware = args.includes("--stale-aware");
-  const maxAgeHours = Number(getArgValue(args, "--max-age-hours=", "24"));
   const baselineCategoryIndex = loadJson(resolveFromRoot("catalog", "category-index.json"));
   const result = refreshTwentyFirstCache({
-    sourceFile,
+    sourceFile:
+      sourceFiles[0] ??
+      (!sourceDir ? "./examples/runtime/twentyfirst-session-export.json" : undefined),
+    sourceFiles,
+    sourceDir,
     baselineCategoryIndex,
     cacheDir,
     staleAware,
@@ -36,6 +47,8 @@ if (command === "refresh") {
     throw new Error("Missing --id for inspect-template");
   }
   console.log(JSON.stringify(inspectCollectedTemplate({ cacheDir, templateId }), null, 2));
+} else if (command === "coverage") {
+  console.log(JSON.stringify(readCacheHealth(cacheDir, maxAgeHours), null, 2));
 } else {
   throw new Error(`Unknown collector command: ${command}`);
 }

@@ -83,7 +83,61 @@ function getExpandedCategories(selectedSections, primaryCategories) {
   )];
 }
 
+function getProviderHealth(provider) {
+  return provider.getCacheHealth?.() ?? {
+    status: "healthy",
+    coverageStatus: "healthy",
+    categoriesMissingItems: [],
+    staleCategories: [],
+    needsRefresh: false
+  };
+}
+
+function getCoverageWarnings(provider, categories) {
+  return categories
+    .map((categoryName) => provider.getCategoryCoverage?.(categoryName))
+    .filter(Boolean)
+    .filter((coverage) => coverage.categoryMissingItems || coverage.categoryStale)
+    .map((coverage) => ({
+      categoryName: coverage.categoryName,
+      status: coverage.categoryMissingItems ? "missing" : "stale",
+      itemCount: coverage.itemCount
+    }));
+}
+
+function getComponentRecipes(provider, categories) {
+  const seen = new Set();
+  const recipes = [];
+
+  for (const category of categories) {
+    const references = provider.getCategoryReferences(category);
+    for (const reference of references) {
+      const detail = provider.getItemDetails?.(reference.id);
+      if (!detail?.normalizedRecipe || seen.has(detail.id)) {
+        continue;
+      }
+
+      seen.add(detail.id);
+      recipes.push({
+        id: detail.id,
+        sourceName: detail.sourceName,
+        sourceCategory: detail.sourceCategory,
+        itemKind: detail.itemKind ?? reference.itemKind ?? "section",
+        targetStack: detail.normalizedRecipe.targetStack,
+        destinationPaths: detail.normalizedRecipe.destinationPaths,
+        install: detail.normalizedRecipe.install,
+        supportFiles: detail.normalizedRecipe.supportFiles,
+        adaptationNotes: detail.normalizedRecipe.adaptationNotes
+      });
+    }
+  }
+
+  return recipes;
+}
+
 export function retrieveReferences({ brief, routing, provider }) {
+  const cacheHealth = getProviderHealth(provider);
+  const primaryCoverageWarnings = getCoverageWarnings(provider, routing.primaryCategories);
   const primaryReferences = routing.primaryCategories.flatMap((category) =>
     provider.getCategoryReferences(category)
   );
@@ -97,6 +151,13 @@ export function retrieveReferences({ brief, routing, provider }) {
     routing.pendingQuestions
   );
 
+  if (cacheHealth.status !== "healthy") {
+    initialConfidence.level = initialConfidence.level === "low" ? "low" : "medium";
+    initialConfidence.reasons.push(
+      `21st cache is ${cacheHealth.status}, so broader collection may still be needed before treating results as complete.`
+    );
+  }
+
   if (routing.pendingQuestions.length > 0) {
     return {
       status: "needs_clarification",
@@ -107,7 +168,10 @@ export function retrieveReferences({ brief, routing, provider }) {
       chosenReferences: initialSelection.chosenReferences,
       expandedCategories: [],
       confidenceSummary: initialConfidence,
-      questionsAsked: routing.pendingQuestions
+      questionsAsked: routing.pendingQuestions,
+      cacheHealth,
+      coverageWarnings: primaryCoverageWarnings,
+      componentRecipes: getComponentRecipes(provider, routing.primaryCategories)
     };
   }
 
@@ -128,7 +192,10 @@ export function retrieveReferences({ brief, routing, provider }) {
       chosenReferences: initialSelection.chosenReferences,
       expandedCategories: [],
       confidenceSummary: initialConfidence,
-      questionsAsked: []
+      questionsAsked: [],
+      cacheHealth,
+      coverageWarnings: primaryCoverageWarnings,
+      componentRecipes: getComponentRecipes(provider, routing.primaryCategories)
     };
   }
 
@@ -158,6 +225,25 @@ export function retrieveReferences({ brief, routing, provider }) {
       routing.activeSignals,
       []
     ),
-    questionsAsked: []
+    questionsAsked: [],
+    cacheHealth,
+    coverageWarnings: uniqueCoverageWarnings(
+      primaryCoverageWarnings,
+      getCoverageWarnings(provider, routing.optionalCategories)
+    ),
+    componentRecipes: getComponentRecipes(
+      provider,
+      [...routing.primaryCategories, ...routing.optionalCategories]
+    )
   };
+}
+
+function uniqueCoverageWarnings(primaryWarnings, expandedWarnings) {
+  const warnings = new Map();
+
+  for (const warning of [...primaryWarnings, ...expandedWarnings]) {
+    warnings.set(warning.categoryName, warning);
+  }
+
+  return [...warnings.values()];
 }

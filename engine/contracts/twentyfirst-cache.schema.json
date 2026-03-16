@@ -12,6 +12,11 @@
           "groupName": { "type": "string" },
           "name": { "type": "string" },
           "count": { "type": "number" },
+          "mapsToSections": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "priority": { "type": "string" },
           "lastSeenAt": { "type": "string" }
         }
       }
@@ -26,19 +31,99 @@
           "sourceCategory": { "type": "string" },
           "sourceUrl": { "type": "string" },
           "sourceName": { "type": "string" },
+          "categoryGroup": { "type": "string" },
+          "itemKind": { "type": "string" },
           "previewUrl": { "type": "string" },
           "description": { "type": "string" },
           "lastSeenAt": { "type": "string" }
         }
       }
     },
+    "itemDetails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "sourceCategory", "sourceUrl", "sourceName", "normalizedRecipe", "lastSeenAt"],
+        "properties": {
+          "id": { "type": "string" },
+          "sourceCategory": { "type": "string" },
+          "sourceUrl": { "type": "string" },
+          "sourceName": { "type": "string" },
+          "categoryGroup": { "type": "string" },
+          "itemKind": { "type": "string" },
+          "previewUrl": { "type": "string" },
+          "screenshot": { "type": "string" },
+          "description": { "type": "string" },
+          "visualTraits": {
+            "type": "object",
+            "properties": {
+              "layout": { "type": "string" },
+              "background": { "type": "string" },
+              "cardStyle": { "type": "string" },
+              "motionStyle": { "type": "string" }
+            }
+          },
+          "code": {
+            "type": "object",
+            "properties": {
+              "dependencies": { "type": "array", "items": { "type": "string" } },
+              "exports": { "type": "array", "items": { "type": "string" } },
+              "supportFiles": { "type": "array", "items": { "type": "string" } },
+              "installCommand": { "type": ["string", "null"] },
+              "demoUsage": { "type": "string" },
+              "sourceSnippets": { "type": "array", "items": { "type": "string" } },
+              "requiredAssets": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "normalizedRecipe": {
+            "type": "object",
+            "required": ["targetStack", "compatibility", "destinationPaths"],
+            "properties": {
+              "targetStack": { "type": "object" },
+              "compatibility": { "type": "object" },
+              "componentName": { "type": "string" },
+              "demoComponentName": { "type": "string" },
+              "destinationPaths": { "type": "object" },
+              "install": { "type": "object" },
+              "supportFiles": { "type": "array", "items": { "type": "string" } },
+              "responsiveBehavior": { "type": "string" },
+              "stateNotes": { "type": "string" },
+              "assetNotes": { "type": "string" },
+              "usageExample": { "type": "string" },
+              "adaptationNotes": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "lastSeenAt": { "type": "string" }
+        }
+      }
+    },
     "collectionState": {
       "type": "object",
-      "required": ["collectorVersion", "lastFullRefreshAt", "categoriesScanned", "failures"],
+      "required": [
+        "collectorVersion",
+        "lastFullRefreshAt",
+        "categoriesScanned",
+        "categoriesWithItems",
+        "categoriesMissingItems",
+        "itemCountsByCategory",
+        "staleCategories",
+        "lastSeenByCategory",
+        "coverageStatus",
+        "failures"
+      ],
       "properties": {
         "collectorVersion": { "type": "string" },
         "lastFullRefreshAt": { "type": "string" },
         "categoriesScanned": { "type": "array", "items": { "type": "string" } },
+        "categoriesWithItems": { "type": "array", "items": { "type": "string" } },
+        "categoriesMissingItems": { "type": "array", "items": { "type": "string" } },
+        "itemCountsByCategory": { "type": "object" },
+        "staleCategories": { "type": "array", "items": { "type": "string" } },
+        "lastSeenByCategory": { "type": "object" },
+        "coverageStatus": {
+          "type": "string",
+          "enum": ["healthy", "incomplete", "stale"]
+        },
         "failures": { "type": "array", "items": { "type": "object" } }
       }
     }

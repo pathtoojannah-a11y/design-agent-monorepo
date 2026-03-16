@@ -62,14 +62,19 @@ The default engine output is a compact JSON build spec containing:
 - visual direction
 - brand adaptation
 - copy direction
+- component recipes when available from the private 21st arsenal
 - implementation prompt
 - non-cloning constraints
 
 When the brief is ambiguous and an extra category could materially change the result, the engine returns a structured `needs_clarification` response instead of guessing.
 
+When the private 21st cache is stale or incomplete, the build spec now surfaces that cache-health state instead of implying full-library coverage.
+
 ## Provider modes
 
 The CLI defaults to the local catalog-backed provider.
+
+When a private 21st cache exists, the CLI now prefers `21st-cache` by default and falls back to `catalog` only when the cache is missing.
 
 You can also use the manual runtime stub:
 
@@ -98,8 +103,20 @@ It does not store mirrored template code or proprietary assets.
 
 Collected 21st runtime data is written under `.local/21st-cache/`, which is gitignored.
 
-The current collector expects a browser/session export input file. That keeps the repo clean while letting you build a private cache locally:
+The collector keeps three private cache layers:
+
+- `categories.json`: visible category index
+- `templates.json`: lightweight item index
+- `items/*.json`: rich private item-detail records with normalized recipe metadata
+
+The collector can merge repeated browser/session exports into that cache while preserving prior good coverage:
 
 ```bash
 npm run collect:refresh -- --source-file=./examples/runtime/twentyfirst-session-export.json
+```
+
+You can inspect cache completeness at any time:
+
+```bash
+npm run collect:coverage
 ```
