@@ -1376,7 +1376,9 @@ export function readCacheHealth(cacheDir = getDefaultCacheDir(), maxAgeHours = D
     lastSeenByCategory: derivedLastSeenByCategory,
     totalItemsDiscovered: currentState.totalItemsDiscovered ?? inventory.length,
     itemStatusCounts: currentState.itemStatusCounts ?? buildItemStatusCounts(inventory),
-    needsRefresh: status !== "healthy"
+    needsRefresh: status !== "healthy",
+    sitemapCollectionStats: currentState.sitemapCollectionStats ?? null,
+    lastSitemapCollectionAt: currentState.lastSitemapCollectionAt ?? null
   };
 }
 
